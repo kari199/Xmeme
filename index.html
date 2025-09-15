@@ -191,15 +191,22 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: url("Background1.mp4") center center / cover no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
       color: white;
       position: relative;
       margin: 0;
       padding: 0;
+      overflow: hidden;
+    }
+
+    /* Video Background */
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
     }
 
     .hero::before {
@@ -732,6 +739,13 @@
   </header>
 
   <section class="hero">
+      <!-- Video Background -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="Background1.mp4" type="video/mp4">
+        <!-- Fallback untuk browser yang tidak support video -->
+        Your browser does not support the video tag.
+      </video>
+      
       <h2 class="glitch" data-text="XMeme 😂">XMeme 😂</h2>
       <p>Automatic Memes on X Layer</p>
       <a href="https://dyorswap.org/" target="_blank">
